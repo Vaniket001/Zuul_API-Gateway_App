@@ -1,0 +1,18 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+server:
+  port: 7777
+spring:
+  application:
+    name: API-GATEWAY
+zuul:
+  prefix: /sb
+  routes:
+    r1:
+      path: /api1/**
+      service-id: WELCOME-SERVICE
+    r2:
+      path: /api2/**
+      service-id: GREET-SERVICE
